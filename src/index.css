@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 30 64 175; /* blue-800 */
+    --color-primary-light: 59 130 246; /* blue-500 */
+    --color-primary-dark: 29 78 216; /* blue-700 */
+    
+    --color-secondary: 15 118 110; /* teal-700 */
+    --color-secondary-light: 20 184 166; /* teal-500 */
+    --color-secondary-dark: 17 94 89; /* teal-800 */
+    
+    --color-accent: 202 138 4; /* yellow-600 */
+    --color-accent-light: 234 179 8; /* yellow-500 */
+    --color-accent-dark: 161 98 7; /* yellow-700 */
+    
+    --color-success: 22 163 74; /* green-600 */
+    --color-warning: 217 119 6; /* amber-600 */
+    --color-error: 220 38 38; /* red-600 */
+    
+    --color-gray-50: 249 250 251;
+    --color-gray-100: 243 244 246;
+    --color-gray-200: 229 231 235;
+    --color-gray-300: 209 213 219;
+    --color-gray-400: 156 163 175;
+    --color-gray-500: 107 114 128;
+    --color-gray-600: 75 85 99;
+    --color-gray-700: 55 65 81;
+    --color-gray-800: 31 41 55;
+    --color-gray-900: 17 24 39;
+    --color-gray-950: 3 7 18;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900 font-sans antialiased min-h-screen;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium leading-tight;
+  }
+  
+  h1 {
+    @apply text-3xl md:text-4xl mb-6;
+  }
+  
+  h2 {
+    @apply text-2xl md:text-3xl mb-4;
+  }
+  
+  h3 {
+    @apply text-xl md:text-2xl mb-3;
+  }
+  
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-white transition-colors 
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950 focus-visible:ring-offset-2 
+           disabled:pointer-events-none disabled:opacity-50;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700 h-10 px-4 py-2;
+  }
+  
+  .btn-secondary {
+    @apply bg-teal-600 text-white hover:bg-teal-700 h-10 px-4 py-2;
+  }
+  
+  .btn-accent {
+    @apply bg-yellow-600 text-white hover:bg-yellow-700 h-10 px-4 py-2;
+  }
+  
+  .btn-outline {
+    @apply border border-gray-300 bg-transparent hover:bg-gray-50 h-10 px-4 py-2;
+  }
+  
+  .btn-ghost {
+    @apply bg-transparent text-gray-700 hover:bg-gray-100 h-10 px-4 py-2;
+  }
+  
+  .btn-sm {
+    @apply h-8 text-xs px-3;
+  }
+  
+  .btn-lg {
+    @apply h-12 text-base px-6;
+  }
+  
+  .input {
+    @apply flex h-10 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm 
+           file:border-0 file:bg-transparent file:text-sm file:font-medium 
+           placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600
+           disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  
+  .select {
+    @apply flex h-10 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600
+           disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  
+  .label {
+    @apply text-sm font-medium leading-none mb-2 block;
+  }
+  
+  .badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+  
+  .badge-blue {
+    @apply bg-blue-100 text-blue-800;
+  }
+  
+  .badge-green {
+    @apply bg-green-100 text-green-800;
+  }
+  
+  .badge-red {
+    @apply bg-red-100 text-red-800;
+  }
+  
+  .badge-yellow {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+  
+  .badge-gray {
+    @apply bg-gray-100 text-gray-800;
+  }
+  
+  .table-container {
+    @apply w-full overflow-auto rounded-lg border border-gray-200;
+  }
+  
+  .table {
+    @apply w-full caption-bottom text-sm;
+  }
+  
+  .table thead {
+    @apply bg-gray-50 [&_tr]:border-b;
+  }
+  
+  .table tbody {
+    @apply [&_tr:last-child]:border-0;
+  }
+  
+  .table tfoot {
+    @apply bg-gray-50 font-medium [&_tr]:border-t;
+  }
+  
+  .table tr {
+    @apply border-b border-gray-200 transition-colors hover:bg-gray-50;
+  }
+  
+  .table th {
+    @apply h-12 px-4 text-left align-middle font-medium text-gray-500;
+  }
+  
+  .table td {
+    @apply p-4 align-middle;
+  }
+  
+  .form-group {
+    @apply mb-4;
+  }
+  
+  .page-container {
+    @apply container mx-auto px-4 py-6;
+  }
+  
+  /* Animation classes */
+  .fade-in {
+    @apply animate-[fadeIn_0.3s_ease-in-out];
+  }
+  
+  .slide-up {
+    @apply animate-[slideUp_0.3s_ease-in-out];
+  }
+  
+  .slide-down {
+    @apply animate-[slideDown_0.3s_ease-in-out];
+  }
+  
+  .scale-in {
+    @apply animate-[scaleIn_0.3s_ease-in-out];
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(10px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes slideDown {
+    from { transform: translateY(-10px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes scaleIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+}
